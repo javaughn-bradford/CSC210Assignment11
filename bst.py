@@ -20,7 +20,28 @@ class BST:
     # to the right
     # don't forget about the special case where the root is None
     def insert(self, value):
-        # YOUR CODE HERE
+        if self.root is Noon : 
+            self.root = BSTNode ( value) 
+            self.count +=1
+            return
+
+        current = self.root
+
+        while True: 
+            if value < current.value:
+                if current.left is None: 
+
+                current.left = BSTNode(value)
+                break 
+            current = current.;eft 
+        else:
+            if current.right is None: 
+                current.right = BSTNode(value)
+                break 
+            current = current.right
+
+    self.count +=1 
+    
         pass
 
     # return the number of nodes in the BST
@@ -31,7 +52,17 @@ class BST:
     # the dunder contains metods is used with the "in" operator
     # like: value in bst
     def __contains__(self, value):
-        # YOUR CODE HERE
+        current = self.root
+
+        while current is not None: 
+            if value == current.value
+                return True 
+            elif value < current.value:
+                current = current.left 
+            else: 
+                current = current.right
+
+        return False
         pass
     
     # Helper for inOrderWalk() to call for entire bst
@@ -45,17 +76,37 @@ class BST:
     # list *accumulated*
     # TIP: See page 288 of Chapter 12 of Introduction to Algorithms
     def in_order_walk_helper(self, current, accumulated):
-        # YOUR CODE HERE
+        if current is None: 
+            return
+
+        self.in_order_walk_helper(current.left, accumated)
+        accumumated.append(current.valaue)
+        self.in_order_walk_helper(current.right, accumulated) 
+
         pass
 
     # Return the minimum value in the BST or None if the BST is empty
     def minimum(self):
-        # YOUR CODE HERE
+        if self.root is None:
+            return None
+
+        current = self.root 
+        while current.left is not None:
+            current = current,left 
+        return current.value
+
+
         pass
     
     # Return the maximum value in the BST or None if the BST is empty
     def maximum(self):
-        # YOUR CODE HERE
+        if self.root is None: 
+            return None
+        current = self.root 
+        while current.right is not None: 
+            current = current.right 
+        return current.value 
+
         pass
     
     
